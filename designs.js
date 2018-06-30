@@ -7,10 +7,10 @@ $('#sizePicker').submit(function(event) {
   event.preventDefault();
   height = $('#inputHeight').val();
   width = $('#inputWidth').val();
-  makeGrid();
+  makeGrid(height, width);
 })
 
-function makeGrid() {
+function makeGrid(x, y) {
 
 // Your code goes here!
 
