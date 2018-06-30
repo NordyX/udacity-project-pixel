@@ -11,7 +11,24 @@ $('#sizePicker').submit(function(event) {
 })
 
 function makeGrid(x, y) {
+  $('tr').remove();
 
-// Your code goes here!
-
+// Your code goes here!]
+// Create table rows and columns
+  for(var i = 1; i <= x; i++) {
+    $('#pixelCanvas').append('<tr id=table' + i + '></tr>');
+    for(var j = 1; j <= y; j++) {
+      $('#table' + i).append('<td></td>');
+    }
+  }
+  
+// Add colour to a cell
+  $('td').click(function addColor() {
+    color = $('#colorPicker').val();
+    if($(this).attr('style')) {
+      $(this).removeAttr('style')
+    } else { 
+      $(this).attr('style', 'background-color:' + color);
+    }
+  })
 }
